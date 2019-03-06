@@ -47,10 +47,10 @@ public class Main extends javax.swing.JFrame {
         Btn_actualizar = new javax.swing.JButton();
         Btn_limpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Txta_aviso = new javax.swing.JTextArea();
+        TxtA_caracteres = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Txta_aviso1 = new javax.swing.JTextArea();
+        TxtA_cadena = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,15 +93,15 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        Txta_aviso.setColumns(20);
-        Txta_aviso.setRows(5);
-        jScrollPane1.setViewportView(Txta_aviso);
+        TxtA_caracteres.setColumns(20);
+        TxtA_caracteres.setRows(5);
+        jScrollPane1.setViewportView(TxtA_caracteres);
 
         jLabel2.setText("Aviso sobre Caracteres: ");
 
-        Txta_aviso1.setColumns(20);
-        Txta_aviso1.setRows(5);
-        jScrollPane2.setViewportView(Txta_aviso1);
+        TxtA_cadena.setColumns(20);
+        TxtA_cadena.setRows(5);
+        jScrollPane2.setViewportView(TxtA_cadena);
 
         jLabel3.setText("Aviso sobre La cadena: ");
 
@@ -116,20 +116,20 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(Btn_limpiar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Btn_actualizar))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Txt_cadena, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Txt_cadena))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1))
+                            .addGap(29, 29, 29)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(25, Short.MAX_VALUE))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(25, 25, 25))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,12 +147,12 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGap(19, 19, 19))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -162,11 +162,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(457, 457, 457)
                 .addComponent(Btn_salir)
-                .addGap(0, 52, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,15 +174,15 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(Btn_salir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,7 +199,8 @@ public class Main extends javax.swing.JFrame {
     private void Btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_limpiarActionPerformed
         // TODO add your handling code here:
         Txt_cadena.setText("");
-        Txta_aviso.setText("");
+        TxtA_caracteres.setText("");
+        TxtA_caracteres.setText("");
     }//GEN-LAST:event_Btn_limpiarActionPerformed
 
     private void Btn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_actualizarActionPerformed
@@ -266,9 +267,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Btn_actualizar;
     private javax.swing.JButton Btn_limpiar;
     private javax.swing.JButton Btn_salir;
+    private javax.swing.JTextArea TxtA_cadena;
+    private javax.swing.JTextArea TxtA_caracteres;
     private javax.swing.JTextField Txt_cadena;
-    private javax.swing.JTextArea Txta_aviso;
-    private javax.swing.JTextArea Txta_aviso1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -280,13 +281,13 @@ public class Main extends javax.swing.JFrame {
 
     public void evaluarCadena(String cadena) {
 
-        Txta_aviso.setText("Revisando Cadena ...");
+        TxtA_caracteres.setText("Revisando Cadena ...");
         
     }
     
     public void revisarCaracter(char c) {
                 
-        String cadenaAnterior = Txta_aviso.getText();
+        String cadenaAnterior = TxtA_caracteres.getText();
         boolean encontrado  = false;
                
         //Revicion de si el caracter es valido
@@ -297,7 +298,7 @@ public class Main extends javax.swing.JFrame {
                     //evt.consume();
                     encontrado  = true;
                     String cadenaNueva = cadenaAnterior + "\n " + c+": Caracter Valido";
-                    Txta_aviso.setText( cadenaNueva );
+                    TxtA_caracteres.setText( cadenaNueva );
                     encontrado = true;
                 }
             }
