@@ -1,21 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GUI;
 
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author W10
+ * @author Jedidian
  */
-
-    
-
 
 public class Main extends javax.swing.JFrame {
     /* 0 y 1 -> Parentesis
@@ -46,7 +35,7 @@ public class Main extends javax.swing.JFrame {
         Btn_salir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Txt_cadena = new javax.swing.JTextField();
+        Txt_string = new javax.swing.JTextField();
         Btn_limpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TxtA_caracteres = new javax.swing.JTextArea();
@@ -70,14 +59,17 @@ public class Main extends javax.swing.JFrame {
 
         jLabel1.setText("Insertar Cadena: ");
 
-        Txt_cadena.addActionListener(new java.awt.event.ActionListener() {
+        Txt_string.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_cadenaActionPerformed(evt);
+                Txt_stringActionPerformed(evt);
             }
         });
-        Txt_cadena.addKeyListener(new java.awt.event.KeyAdapter() {
+        Txt_string.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                Txt_cadenaKeyTyped(evt);
+                Txt_stringKeyTyped(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Txt_stringKeyReleased(evt);
             }
         });
 
@@ -115,7 +107,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Txt_cadena))
+                                .addComponent(Txt_string))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,7 +124,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(Txt_cadena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Txt_string, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addComponent(Btn_limpiar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -140,7 +132,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -186,15 +178,15 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Txt_cadenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_cadenaActionPerformed
+    private void Txt_stringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_stringActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_cadenaActionPerformed
+    }//GEN-LAST:event_Txt_stringActionPerformed
 
     private void Btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_limpiarActionPerformed
         // TODO add your handling code here:
-        Txt_cadena.setText("");
+        Txt_string.setText("");
         TxtA_caracteres.setText("");
-        TxtA_caracteres.setText("");
+        TxtA_cadena.setText("");
     }//GEN-LAST:event_Btn_limpiarActionPerformed
 
     private void Btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_salirActionPerformed
@@ -202,19 +194,24 @@ public class Main extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_Btn_salirActionPerformed
 
-    private void Txt_cadenaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_cadenaKeyTyped
+    private void Txt_stringKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_stringKeyTyped
         
-        
-        String cadena = Txt_cadena.getText();        
-        evaluarCadena(cadena);
-        
-        /* obtencion del caracter
-        char c = evt.getKeyChar();
-        
-        revisarCaracter(c);
-        */
+    }//GEN-LAST:event_Txt_stringKeyTyped
 
-    }//GEN-LAST:event_Txt_cadenaKeyTyped
+    private void Txt_stringKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Txt_stringKeyReleased
+       
+        // Codigo al actualizar la cadena
+        boolean valida = true;
+        String cadena = Txt_string.getText();
+        valida = evaluarCadena(cadena);
+
+        if (valida == true) {
+            TxtA_cadena.setText("Cadena Valida");
+        } else {
+            TxtA_cadena.setText("Cadena  Invalida");
+        }
+  
+    }//GEN-LAST:event_Txt_stringKeyReleased
 
     /**
      * @param args the command line arguments
@@ -259,7 +256,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Btn_salir;
     private javax.swing.JTextArea TxtA_cadena;
     private javax.swing.JTextArea TxtA_caracteres;
-    private javax.swing.JTextField Txt_cadena;
+    private javax.swing.JTextField Txt_string;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -269,32 +266,39 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 
-    public void evaluarCadena(String cadena) {
-
-        TxtA_caracteres.setText("Revisando Cadena ...");
+    public boolean evaluarCadena(String cadena) {
         
+        boolean valido = true;
         
-    }
-    
-    public void revisarCaracter(char c) {
+        if( !cadena.equalsIgnoreCase("") ){
+        
+            String nuevo = "";
+            boolean encontrado = false;
+            
+            for (int i = 0; i < cadena.length(); i++) {
                 
-        String cadenaAnterior = TxtA_caracteres.getText();
-        boolean encontrado  = false;
-               
-        //Revicion de si el caracter es valido
-       // do{
-            for(int i = 0; i < sym.length(); i++){
-                    
-                if ( c == sym.charAt(i) ) {
-                    //evt.consume();
-                    encontrado  = true;
-                    String cadenaNueva = cadenaAnterior + "\n " + c+": Caracter Valido";
-                    TxtA_caracteres.setText( cadenaNueva );
+                char c = cadena.charAt(i) ;
+                String actual = "";
+           
+                int pos = sym.indexOf( c );
+                
+                if( pos != -1){
+                    actual = c + " -> caracter valido \n";
                     encontrado = true;
+                }else{
+                    actual = c + " -> caracter NO valido \n";
+                    encontrado = true;
+                    valido = false;
                 }
+                
+                nuevo = nuevo + actual + "\n";
+                TxtA_caracteres.setText( nuevo );
             }
-       
-    //}while(encontrado == false);
         
+        }else{
+            TxtA_cadena.setText("La cadena esta vacia ...");
+        }
+        
+        return valido;
     }
 }
